@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: chess-analysis-postgres
+    environment:
+      POSTGRES_DB: chess_analysis
+      POSTGRES_USER: chess_analysis
+      POSTGRES_PASSWORD: 1234
+    ports:
+      - "5432:5432"
+    volumes:
+      - chess_analysis_data:/var/lib/postgresql/data
+
+volumes:
+  chess_analysis_data:
